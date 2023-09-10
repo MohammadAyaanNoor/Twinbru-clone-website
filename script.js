@@ -30,11 +30,15 @@ ScrollTrigger.refresh();
 
 }
 
+var sound = new Audio("ambient.mp3")
+
 
 function loader(){
   var loader = document.querySelector("#loader")
 var circle = document.querySelector("#circle")
 loader.addEventListener("click",function(){
+  playeffect();
+    sound.play();
     gsap.to(circle,{
         transform:"translate(-50%,-50%) scale(2)"
     })
@@ -72,6 +76,35 @@ if(i === 0){
   },50)
 }
   
+
+}
+function playeffect(){
+  var mutetl = gsap.timeline()
+  mutetl.to("#sound .s1",{
+    height:"1.2vw",
+    yoyo:true,
+    repeat:-1,
+    duration:0.8,
+    ease:Expo.ease
+
+  },'mute')
+  mutetl.to("#sound .s2",{
+    height:"0.6vw",
+    yoyo:true,
+    repeat:-1,
+    duration:0.6,
+    ease:Expo.ease
+
+  })
+  mutetl.to("#sound .s3",{
+    height:"1.2vw",
+    yoyo:true,
+    repeat:-1,
+    duration:0.6,
+    ease:Expo.ease
+
+  },'mute')
+
 
 }
 function canvas(){
@@ -1268,7 +1301,6 @@ function imagemove(){
 }
 
 
-
 loco();
 loader();
 canvas();
@@ -1283,3 +1315,4 @@ underlineeffect();
 mousefollower();
 hoveronlinks();
 imagemove();
+playeffect();

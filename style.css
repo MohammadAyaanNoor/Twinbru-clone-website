@@ -112,8 +112,32 @@ html,body{
     padding: 2vw 3.5vw;
     
 }
+#navright{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+#nav #sound{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15vw;
+    height: 2.5vw;
+    width: 2.5vw;
+    border-radius: 50%;
+    border: 0.1vw solid white;
+
+}
+#sound .span{
+    width: 0.3vw;
+    border-radius: 0.5vw;
+    height: 0.1vw;
+    background-color: white;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+}
+
 #nav i{
-    font-size: 1.4vw;
+    font-size: 2vw;
     color: white;
 }
 #nav #logo{
